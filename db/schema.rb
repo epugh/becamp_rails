@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140821022143) do
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",               default: "",    null: false
     t.integer  "sign_in_count",       default: 0,     null: false
     t.datetime "current_sign_in_at"
@@ -31,6 +31,6 @@ ActiveRecord::Schema.define(version: 20140821022143) do
     t.datetime "registered_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
